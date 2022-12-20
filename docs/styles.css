@@ -1,0 +1,44 @@
+/* css styles */
+
+.navbar-dark {
+    background-color: purple;
+}
+
+.sidebar-navigation .sidebar-item {
+    font-size: 1rem;
+}
+
+/* image size */
+
+.img-fluid.figure-img {
+    margin-bottom: .5rem;
+    line-height: 1;
+    max-width: 65%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.projects-image, .cv-image {
+    height: auto;
+    width: 40%;
+    margin: auto;
+    display: block;
+}
+
+.education-image {
+    height: auto;
+    width: 75%;
+    margin: auto;
+    display: block;
+}
+
+.cert-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* no bullets on the career list */
+
+.career-list {
+    list-style: none;
+}
