@@ -23,6 +23,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -61,6 +124,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -140,10 +206,34 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#about-the-data" id="toc-about-the-data" class="nav-link" data-scroll-target="#about-the-data">About the data</a></li>
+  <li><a href="#file-structures-and-set-up" id="toc-file-structures-and-set-up" class="nav-link" data-scroll-target="#file-structures-and-set-up">File structures and set-up</a></li>
+  <li><a href="#joining-data-as-.csv-files" id="toc-joining-data-as-.csv-files" class="nav-link" data-scroll-target="#joining-data-as-.csv-files">Joining data as .csv files</a></li>
+  <li><a href="#data-checking-and-cleaning" id="toc-data-checking-and-cleaning" class="nav-link" data-scroll-target="#data-checking-and-cleaning">Data checking and cleaning</a></li>
+  <li><a href="#observations-on-the-data" id="toc-observations-on-the-data" class="nav-link" data-scroll-target="#observations-on-the-data">Observations on the data</a></li>
+  </ul></li>
+  <li><a href="#data-visualisations" id="toc-data-visualisations" class="nav-link" data-scroll-target="#data-visualisations">Data visualisations</a>
+  <ul class="collapse">
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots">Boxplots</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  <li><a href="#barplot" id="toc-barplot" class="nav-link" data-scroll-target="#barplot">Barplot</a>
+  <ul class="collapse">
+  <li><a href="#summary-1" id="toc-summary-1" class="nav-link" data-scroll-target="#summary-1">Summary</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -185,9 +275,530 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="overview" class="level1 page-columns page-full">
+<h1>Overview</h1>
 <p><a href="https://cjjdavies.github.io/psych-dashboard/">Link to dashboard on GitHub</a></p>
+<p>The aim of this dashboard project is to summarise the impact of deprivation on psychiatric patient hospitalizations across Scotland, using discharge data from the Scottish Public Health Observatory for the most recent period for which data are available: 2017-18 to 2019-20. The main outputs are a map and summary statistics to compare between the most deprived and least deprived areas across each of Scotland’s local authorities and health boards.</p>
+<p>To produce the map, I used data of psychiatric patient hospitalization discharges from each council area in Scotland, including quintile data from the Scottish Index of Multiple Deprivation. These data can be downloaded from the Scottish Public Health Observatory 2021. Also necessary is a quality shapefile of Scotland, coded to include geometry linked to council area, available from <a href="https://www.spatialdata.gov.scot/geonetwork/srv/eng/catalog.search#/home">https://www.spatialdata.gov.scot/geonetwork/srv/eng/catalog.search#/home</a>.</p>
+<section id="about-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-data">About the data</h2>
+<p>Definition: Patients discharged from psychiatric hospitals: 3-year rolling average number and directly age-sex standardised rate per 100,000 population. All rates have been standardised against the European standard population(ESP2013) and 2011-base population estimates. Patient is selected only once per year, based on their discharge date. Values less than 10 are suppressed. No rounding. All age-groups and sexes.</p>
+<p>Data Source: Public Health Scotland (SMR04)</p>
+<p>Geography code: A standard code assigned to geographical areas, which in this case is council area</p>
+<p>Numerator: Number of patients discharged from psychiatric hospitals; denominator: total population</p>
+<p>Indicator-measure: Age-sex standardised rate per 100,000</p>
+<p>Quintile: Based on the Scottish Index of Multiple Deprivation (SIMD), five categories of deprivation are used from 1 - most deprived (the 20% most deprived) to 5 - least deprived (the 20% least deprived). All other variables are aligned to these data, where applicable, specifically, geography code, numerator, indicator, and confidence intervals</p>
+<p>Period: financial year from 2002/03-2019/20, 3-year aggregates</p>
+<p>Confidence interval: Dobson’s method</p>
+</section>
+<section id="file-structures-and-set-up" class="level2">
+<h2 class="anchored" data-anchor-id="file-structures-and-set-up">File structures and set-up</h2>
+<p>When working on building these types of projects, I follow a file structure recommended in this <a href="https://www.r-bloggers.com/2020/01/rstudio-projects-and-working-directories-a-beginners-guide/">r-bloggers post by Martin Chan</a>, and shown in the image below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/rbloggers_file_structures.png" class="img-fluid figure-img" alt="The folders and files are arranged in a hierarchy. The first level is 'Your Project Name' with an .Rproj (R Project File) and three folders: a 'Data' folder, containing all data files needed for the analysis; a 'Script' folder, containing a folder called 'Functions' for any functions created and used, and separate .r or .rmd files for each analysis; and an 'Output' folder with a folder each for 'Plots' and 'Data'"></p>
+<p></p><figcaption class="figure-caption">Diagram of R project file structure</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="joining-data-as-.csv-files" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="joining-data-as-.csv-files">Joining data as .csv files</h2>
+<p>The first step is to acquire the data from the Scottish Public Health Observatory as .csv files which are downloaded into <code>pph_csv_files</code> folders. I moved all separate files into a <code>/data/pph_csv_files</code> folder to keep them in one place. All time periods for all areas were initially chosen to ensure there would be sufficient data of an appropriate quality to be able to generate an interesting map.</p>
+<ol type="1">
+<li>Create a collection of .csv files saved into the current directory, first by defining the working directory where the csv files are located.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mydir <span class="ot">=</span> <span class="st">"../../data/pph_csv_files/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Then specify the filepath and filetypes to search for, and include the full file names in the object</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>myfiles <span class="ot">=</span> <span class="fu">list.files</span>(<span class="at">path =</span> mydir, <span class="at">pattern =</span> <span class="st">"*.csv"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Inspect the object and check there are the correct number of files listed as the ones downloaded. You should also be able to see the number of files listed in the environment pane.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>myfiles</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/myfiles_environment.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The R Studio ‘Environment’ tab showing ‘myfiles’ with 32 files listed</figcaption><p></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Load the <code>plyr</code> and <code>readr</code> packages. Use the <code>ldply</code> function from the <code>plyr</code> package and ’<code>read_csv</code> from the <code>readr</code> package to join all .csv files into one. The <code>show_col_types = FALSE</code> argument suppresses the output in the terminal.</li>
+</ol>
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-4_860abb57cb91297500e83d2219d91876">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plyr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>all_data <span class="ot">=</span> <span class="fu">ldply</span>(myfiles, readr<span class="sc">::</span>read_csv, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>View the first five rows and columns 2-5 of the data.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>all_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  geography_code           quintile
+1      S12000033  1 - most deprived
+2      S12000033                  2
+3      S12000033                  3
+4      S12000033                  4
+5      S12000033 5 - least deprived
+                                                 period numerator
+1 2002/03 to 2004/05 financial years; 3-year aggregates     212.7
+2 2002/03 to 2004/05 financial years; 3-year aggregates     173.0
+3 2002/03 to 2004/05 financial years; 3-year aggregates     169.3
+4 2002/03 to 2004/05 financial years; 3-year aggregates      82.3
+5 2002/03 to 2004/05 financial years; 3-year aggregates      76.7</code></pre>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Create a tibble of the files.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>all_data <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(all_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="7" type="1">
+<li>A sample of the dataset is shown here to demonstrate the main columns to be used in this project. Using package <code>dplyr</code> to first <code>select</code> the columns of interest, then <code>filter</code> the rows of interest - quintiles 1 and 5 - and <code>slice</code> the first 10 rows. Each of these commands can be ‘piped’ (<code>%&gt;%</code> from the <code>magrittr</code> package) through to package <code>kableExtra</code> for producing a neatly formatted table.</li>
+</ol>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(all_data, <span class="fu">c</span>(<span class="st">"geography_code"</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"quintile"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"period"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"numerator"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"indicator_measure"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"lower_confidence_interval"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"upper_confidence_interval"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(quintile <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1 - most deprived"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"5 - least deprived"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kbl</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display column-screen">
+
+<table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> geography_code </th>
+   <th style="text-align:left;"> quintile </th>
+   <th style="text-align:left;"> period </th>
+   <th style="text-align:right;"> numerator </th>
+   <th style="text-align:right;"> indicator_measure </th>
+   <th style="text-align:right;"> lower_confidence_interval </th>
+   <th style="text-align:right;"> upper_confidence_interval </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 1 - most deprived </td>
+   <td style="text-align:left;"> 2002/03 to 2004/05 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 212.7 </td>
+   <td style="text-align:right;"> 527.2 </td>
+   <td style="text-align:right;"> 456.6 </td>
+   <td style="text-align:right;"> 605.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 5 - least deprived </td>
+   <td style="text-align:left;"> 2002/03 to 2004/05 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 76.7 </td>
+   <td style="text-align:right;"> 197.3 </td>
+   <td style="text-align:right;"> 153.1 </td>
+   <td style="text-align:right;"> 249.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 1 - most deprived </td>
+   <td style="text-align:left;"> 2003/04 to 2005/06 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 213.0 </td>
+   <td style="text-align:right;"> 520.4 </td>
+   <td style="text-align:right;"> 450.8 </td>
+   <td style="text-align:right;"> 597.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 5 - least deprived </td>
+   <td style="text-align:left;"> 2003/04 to 2005/06 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 78.7 </td>
+   <td style="text-align:right;"> 207.5 </td>
+   <td style="text-align:right;"> 162.0 </td>
+   <td style="text-align:right;"> 261.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 1 - most deprived </td>
+   <td style="text-align:left;"> 2004/05 to 2006/07 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 212.3 </td>
+   <td style="text-align:right;"> 518.0 </td>
+   <td style="text-align:right;"> 448.2 </td>
+   <td style="text-align:right;"> 595.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 5 - least deprived </td>
+   <td style="text-align:left;"> 2004/05 to 2006/07 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 72.0 </td>
+   <td style="text-align:right;"> 191.6 </td>
+   <td style="text-align:right;"> 148.1 </td>
+   <td style="text-align:right;"> 243.4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 1 - most deprived </td>
+   <td style="text-align:left;"> 2005/06 to 2007/08 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 196.7 </td>
+   <td style="text-align:right;"> 479.6 </td>
+   <td style="text-align:right;"> 412.6 </td>
+   <td style="text-align:right;"> 554.1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 5 - least deprived </td>
+   <td style="text-align:left;"> 2005/06 to 2007/08 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 68.3 </td>
+   <td style="text-align:right;"> 181.6 </td>
+   <td style="text-align:right;"> 139.3 </td>
+   <td style="text-align:right;"> 232.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 1 - most deprived </td>
+   <td style="text-align:left;"> 2006/07 to 2008/09 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 190.0 </td>
+   <td style="text-align:right;"> 466.3 </td>
+   <td style="text-align:right;"> 399.8 </td>
+   <td style="text-align:right;"> 540.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> S12000033 </td>
+   <td style="text-align:left;"> 5 - least deprived </td>
+   <td style="text-align:left;"> 2006/07 to 2008/09 financial years; 3-year aggregates </td>
+   <td style="text-align:right;"> 64.7 </td>
+   <td style="text-align:right;"> 169.0 </td>
+   <td style="text-align:right;"> 129.0 </td>
+   <td style="text-align:right;"> 217.1 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<ol start="8" type="1">
+<li>Create a back up data file of all combined files that R can read, and save in the same directory as the individual .csv files.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(all_data, <span class="at">file =</span> <span class="st">"../../data/pph_csv_files/all_data.rda"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="9" type="1">
+<li>Do the same in .csv format, using the <code>readr</code> package and <code>write_excel_csv</code> function.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_excel_csv</span>(all_data, <span class="st">"../../data/pph_csv_files/all_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-checking-and-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="data-checking-and-cleaning">Data checking and cleaning</h2>
+<p>Before thinking of analysis, I like to carry out various checks to make sure the data object(s) is (are) of the type I need and coded appropriately, for example, categories are factors, numeric and integer data are recognised as such. As these data are cleaned and released for public use, there is very little to do here.</p>
+<p>Standard checks I do:</p>
+<ol type="1">
+<li>Check the type of object to make sure data are in the correct format. In this case, tibble and dataframe.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(all_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Look at the column names to make sure there are no errors and identify if any names need to be changed for clarity.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(all_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "indicator"                              
+ [2] "geography_code"                         
+ [3] "quintile"                               
+ [4] "period"                                 
+ [5] "numerator"                              
+ [6] "indicator_measure"                      
+ [7] "lower_confidence_interval"              
+ [8] "upper_confidence_interval"              
+ [9] "definition"                             
+[10] "relative_inequality_gap"                
+[11] "lower_confidence_interval_relative_ineq"
+[12] "upper_confidence_interval_relative_ineq"
+[13] "absolute_inequality_gap"                
+[14] "lower_confidence_interval_absolute_ineq"
+[15] "upper_confidence_interval_absolute_ineq"
+[16] "population_attributable_risk"           </code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Check dimensions of the dataframe object. Here there should be 3072 rows, and 16 columns.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(all_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12288    16</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Check the data structure to see if variables are categorised correctly.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(all_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [12,288 × 16] (S3: tbl_df/tbl/data.frame)
+ $ indicator                              : chr [1:12288] "Psychiatric patient hospitalisations" "Psychiatric patient hospitalisations" "Psychiatric patient hospitalisations" "Psychiatric patient hospitalisations" ...
+ $ geography_code                         : chr [1:12288] "S12000033" "S12000033" "S12000033" "S12000033" ...
+ $ quintile                               : chr [1:12288] "1 - most deprived" "2" "3" "4" ...
+ $ period                                 : chr [1:12288] "2002/03 to 2004/05 financial years; 3-year aggregates" "2002/03 to 2004/05 financial years; 3-year aggregates" "2002/03 to 2004/05 financial years; 3-year aggregates" "2002/03 to 2004/05 financial years; 3-year aggregates" ...
+ $ numerator                              : num [1:12288] 212.7 173 169.3 82.3 76.7 ...
+ $ indicator_measure                      : num [1:12288] 527 416 425 221 197 ...
+ $ lower_confidence_interval              : num [1:12288] 457 356 360 173 153 ...
+ $ upper_confidence_interval              : num [1:12288] 605 484 498 278 250 ...
+ $ definition                             : chr [1:12288] "Age-sex standardised rate per 100,000" "Age-sex standardised rate per 100,000" "Age-sex standardised rate per 100,000" "Age-sex standardised rate per 100,000" ...
+ $ relative_inequality_gap                : num [1:12288] NA NA NA NA NA 60.8 NA NA NA NA ...
+ $ lower_confidence_interval_relative_ineq: num [1:12288] NA NA NA NA NA 23.8 NA NA NA NA ...
+ $ upper_confidence_interval_relative_ineq: num [1:12288] NA NA NA NA NA 97.8 NA NA NA NA ...
+ $ absolute_inequality_gap                : num [1:12288] NA NA NA NA NA ...
+ $ lower_confidence_interval_absolute_ineq: num [1:12288] NA NA NA NA NA ...
+ $ upper_confidence_interval_absolute_ineq: num [1:12288] NA NA NA NA NA ...
+ $ population_attributable_risk           : num [1:12288] NA NA NA NA NA 44.6 NA NA NA NA ...</code></pre>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Generate summary statistics to check for e.g.&nbsp;potential anomalies, missing values, minimum and maximum values, relationship between median and mean.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(all_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  indicator         geography_code       quintile            period         
+ Length:12288       Length:12288       Length:12288       Length:12288      
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+   numerator      indicator_measure lower_confidence_interval
+ Min.   :  10.0   Min.   :  40.8    Min.   :  4.4            
+ 1st Qu.:  47.7   1st Qu.: 187.8    1st Qu.:134.9            
+ Median :  86.3   Median : 272.1    Median :217.5            
+ Mean   : 172.7   Mean   : 296.9    Mean   :235.9            
+ 3rd Qu.: 184.3   3rd Qu.: 367.2    3rd Qu.:306.8            
+ Max.   :2552.7   Max.   :1119.2    Max.   :947.7            
+ NA's   :716                                                 
+ upper_confidence_interval  definition        relative_inequality_gap
+ Min.   : 108.9            Length:12288       Min.   :-12.10         
+ 1st Qu.: 260.3            Class :character   1st Qu.: 53.50         
+ Median : 340.2            Mode  :character   Median : 64.45         
+ Mean   : 373.9                               Mean   : 62.74         
+ 3rd Qu.: 446.4                               3rd Qu.: 75.88         
+ Max.   :1311.4                               Max.   :101.50         
+                                              NA's   :10240          
+ lower_confidence_interval_relative_ineq
+ Min.   :-105.200                       
+ 1st Qu.:   3.375                       
+ Median :  25.350                       
+ Mean   :  21.721                       
+ 3rd Qu.:  44.525                       
+ Max.   :  72.400                       
+ NA's   :10240                          
+ upper_confidence_interval_relative_ineq absolute_inequality_gap
+ Min.   : 14.40                          Min.   : -62.9         
+ 1st Qu.: 83.17                          1st Qu.: 299.0         
+ Median :102.40                          Median : 385.6         
+ Mean   :103.77                          Mean   : 383.7         
+ 3rd Qu.:122.15                          3rd Qu.: 475.1         
+ Max.   :212.20                          Max.   :1040.2         
+ NA's   :10240                           NA's   :10240          
+ lower_confidence_interval_absolute_ineq
+ Min.   :-250.10                        
+ 1st Qu.:  18.12                        
+ Median : 146.70                        
+ Mean   : 156.08                        
+ 3rd Qu.: 267.20                        
+ Max.   : 801.20                        
+ NA's   :10240                          
+ upper_confidence_interval_absolute_ineq population_attributable_risk
+ Min.   :  49.1                          Min.   :-34.50              
+ 1st Qu.: 469.8                          1st Qu.: 32.75              
+ Median : 601.0                          Median : 43.05              
+ Mean   : 611.4                          Mean   : 41.11              
+ 3rd Qu.: 737.4                          3rd Qu.: 52.65              
+ Max.   :1400.8                          Max.   : 70.20              
+ NA's   :10240                           NA's   :10240               </code></pre>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Format the text in the period column to show just the year ranges without the additional text, then replace the forward slash (/) with a hyphen (-). There are many ways to do this, but here I use the <code>gsub</code> function from <code>base R</code> suite of functions (I started using R before <code>tidyverse</code> and even R Studio were invented, and I still use some of these functions):</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>all_data<span class="sc">$</span>period <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" financial years; 3-year aggregates"</span>, <span class="st">""</span>, all_data<span class="sc">$</span>period)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>all_data<span class="sc">$</span>period <span class="ot">&lt;-</span> <span class="fu">gsub</span> (<span class="st">"/"</span>, <span class="st">"-"</span>, all_data<span class="sc">$</span>period)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="7" type="1">
+<li>Subset data to create a smaller dataframe of all rows, and columns 2 to 8 inclusive. Convert <code>period</code> and <code>quintile</code> columsn to factors.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>all_data_subset <span class="ot">&lt;-</span> all_data[, <span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>all_data_subset<span class="sc">$</span>period <span class="ot">&lt;-</span> <span class="fu">factor</span>(all_data_subset<span class="sc">$</span>period)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>all_data_subset<span class="sc">$</span>quintile <span class="ot">&lt;-</span> <span class="fu">factor</span>(all_data_subset<span class="sc">$</span>quintile)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="8" type="1">
+<li>Check for unique and missing values (output not shown here for brevity, but you can check these yourself).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>all_data_subset<span class="sc">$</span>numerator <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>all_data_subset<span class="sc">$</span>numerator <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="observations-on-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="observations-on-the-data">Observations on the data</h2>
+<ol type="1">
+<li>Overall the mean is greater than the median for <code>numerator</code> and <code>indicator_measure</code> variables, indicating the data are skewed to the right and may be influenced by high outlying values. The histogram below illustrates this concept.</li>
+<li>There are notably large differences between 3rd quartiles and max values, indicating presence of outlying values.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(all_data_subset<span class="sc">$</span>indicator_measure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>However these measures are based on the whole dataset <code>all_data_subset</code>, and have not been filtered by time period or geographical location. I need to dig deeper into the data to identify possible temporal or spatial trends that may be worth further investigation.</p>
+</section>
+</section>
+<section id="data-visualisations" class="level1 page-columns page-full">
+<h1>Data visualisations</h1>
+<section id="boxplots" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="boxplots">Boxplots</h2>
+<p>The first set of visuals are boxplots. These types of plots are useful for checking the range and spread of a dataset as they show the summary statistics generated earlier in visual form. They are also useful for identifying distribution, skewness and outliers - all of which can influence the robustness and reliability of statistical models.</p>
+<p>As I am interested in identifying variation in psychiatric patient hospitalisations attributable to deprivation, I will visualise a subset of data from quintiles 1 (most deprived) and 5 (least deprived), across all time periods.</p>
+<p>I use the following steps:</p>
+<ol type="1">
+<li>Call <code>ggplot</code> from package <code>ggplot2</code> and create a subset of data from the quintiles.</li>
+<li>Specify the levels within the quintile column with <code>quintile %in% c(“1 - most deprived”, “5 - least deprived”)</code>.</li>
+<li>Call the aesthetics to plot time period on the x axis and indicator_measure on the y axis. Boxplots are colour-coded by quintile (using the <code>viridis</code> palette).</li>
+<li><code>geom_boxplot(width = 0.5)</code> alters the width of each boxplot to improve fit on the page.</li>
+<li>Labels are added with <code>labs</code>, where title, subtitle and caption can be specified.</li>
+<li>The <code>viridis</code> palette is used to fill the boxplots with colourblind safe colours.</li>
+<li>The two groups of boxplots are placed side by side using <code>facet_wrap</code> based on quintile order.</li>
+<li>Additional aesthetics are managed by the <code>theme_bw</code> and <code>theme()</code> functions.</li>
+<li><code>theme_bw</code> creates a simple theme with limited formatting; it is important to use <code>theme()</code> for adjusting other elements of formatting as it has greater flexibility than <code>theme_bw</code>.</li>
+</ol>
+<div class="cell column-page">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>psych_boxplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">subset</span>(all_data_subset, </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>              quintile <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1 - most deprived"</span>, <span class="st">"5 - least deprived"</span>)), </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> period, <span class="at">y =</span> indicator_measure, <span class="at">fill =</span> quintile)) <span class="sc">+</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of Psychiatric Patient Hospitalisations from most deprived</span><span class="sc">\n</span><span class="st">and least deprived areas of Scotland, 2002 to 2020"</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Age-standardised rate per 100,000"</span>,</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: Scottish Public Health Observatory 2021"</span>) <span class="sc">+</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(quintile<span class="sc">~</span>.) <span class="sc">+</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_blank</span>(), <span class="co"># Removes heavy background formatting</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(), <span class="co"># Removes the outline border around the plot</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>), <span class="co"># Changes the background fill from the plot titles ("1 most deprived", "5 - least deprived") from gray to colour of choice</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>), <span class="co"># Changes text size of plot titles ("1 most deprived", "5 - least deprived")</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="co"># Removes the legend</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">lineheight =</span> <span class="fl">1.15</span>), <span class="co"># Moves the vertical alignment of the plot title and increases the spacing between the title lines</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">lineheight =</span> <span class="fl">1.5</span>), <span class="co"># Modifies the features of the subtitle: text size, vertical adjustment and lineheight</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="dv">0</span>), <span class="co"># Modifies the caption attributes, including horizontal adjustment</span></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Removes the x axis title</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(), <span class="co"># Removes the y axis title</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">angle =</span> <span class="dv">90</span>), <span class="co"># Modifies the x axis text</span></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"black"</span>)) <span class="co"># Modifies the y axis text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>By calling the <code>ggplot</code> object, <code>psych_boxplot</code>, you can see your graphic nicely rendered:</p>
+<div class="cell page-columns page-full" data-fig.asp="0.8">
+<div class="cell-output-display column-page-right">
+<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" style="width:75.0%"></p>
+</div>
+</div>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>For age-standardised rate per 100,000 population, there is a higher proportion of discharges from psychiatric hospitals for people from most deprived areas than least deprived areas. From 2002 to 2011 the boxplots of most deprived data show a greater spread of datapoints, with more extreme outliers, than the boxplots for least deprived areas. There has been an overall decline in the rate of hospitalisations since the first set of aggregated data were released covering 2003-04 to 2005-06 until the final period of 2017-18 to 2019-2020.</p>
+</section>
+</section>
+<section id="barplot" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="barplot">Barplot</h2>
+<p>Barplots are useful to compare differences between categories. Including error bars, for standard error, standard deviation or confidence interval (depending on your analysis), can be helpful in determining whether differences observed between categories may be significant or not. This is relatively easy to do with R.</p>
+<p>I will follow these steps to produce a barchart with confidence interval bars for the most deprived and least deprived for each local authority in Scotland.</p>
+<ol type="1">
+<li><p>Filter the quintiles of interest from the subsetted dataframe, <code>all_data_subset</code>.</p></li>
+<li><p>Set the aesthetics (known as <code>aes</code> in <code>ggplot</code>), using <code>period</code> for the x axis and <code>indicator_measure</code> for the y axis. The <code>fill</code> argument is used to define custom colours as used for the boxplots.</p></li>
+<li><p>The <code>geom_bar</code> function specifies a barchart, requiring additional arguments to create groups based on the two quintile categories and clustered according to time period. The width of the bar needs to be specified here, using the same width for the errorbars in order to ensure they are centred properly in the barchart.</p></li>
+<li><p>The errorbars are specified from the data - <code>lower_confidence_interval</code> and <code>upper_confidence_interval</code> and positioned correctly using the <code>position = position_dodge</code> argument.</p></li>
+<li><p>The barplots are separated into local authority based on <code>geography_code</code> - these are an important part of mapping and will be discussed further in the mapping section.</p></li>
+</ol>
+<div class="cell column-page">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>psych_barplot <span class="ot">&lt;-</span> all_data_subset <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(quintile <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1 - most deprived"</span>, <span class="st">"5 - least deprived"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> period, <span class="at">y =</span> indicator_measure, <span class="at">fill =</span> quintile)) <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="st">"dodge"</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">width =</span> <span class="fl">0.8</span>) <span class="sc">+</span> <span class="co"># Specifying the bar width here will make it easier to centre error bars</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower_confidence_interval,</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> upper_confidence_interval),</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.4</span>,</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>)) <span class="sc">+</span> <span class="co"># Use the 'width' argument to centre error bars</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of Psychiatric Patient Hospitalisations from most deprived</span><span class="sc">\n</span><span class="st">and least deprived areas of Scotland, 2002 to 2020"</span>,</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Age-standardised rate per 100,000"</span>,</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: Scottish Public Health Observatory 2021"</span>) <span class="sc">+</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>geography_code, <span class="at">ncol =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_blank</span>(), <span class="co"># Removes heavy background formatting</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(), <span class="co"># Removes the outline border around the plot</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"white"</span>), <span class="co"># Changes the background fill from the plot titles ("1 most deprived", "5 - least deprived") from gray to colour of choice</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>), <span class="co"># Changes text size of plot titles ("1 most deprived", "5 - least deprived")</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="co"># Removes the legend</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">lineheight =</span> <span class="fl">1.15</span>), <span class="co"># Moves the vertical alignment of the plot title and increases the spacing between the title lines</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">lineheight =</span> <span class="fl">1.5</span>), <span class="co"># Modifies the features of the subtitle: text size, vertical adjustment and lineheight</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="dv">0</span>), <span class="co"># Modifies the caption attributes, including horizontal adjustment</span></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Removes the x axis title</span></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(), <span class="co"># Removes the y axis title</span></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">angle =</span> <span class="dv">90</span>), <span class="co"># Modifies the x axis text</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"black"</span>)) <span class="co"># Modifies the y axis text</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>By calling the ggplot object, <code>psych_boxplot</code>, you can see your graphic nicely rendered:</p>
+<div class="cell page-columns page-full" data-fig.asp="0.8">
+<div class="cell-output-display column-screen-inset-shaded">
+<p><img src="index_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+<section id="summary-1" class="level3">
+<h3 class="anchored" data-anchor-id="summary-1">Summary</h3>
+<p>For age-standardised rate per 100,000 population, there is a higher proportion of discharges from psychiatric hospitals for people from most deprived areas than least deprived areas. There has been an overall decline in the rate of hospitalisations since the first set of aggregated data were released covering 2003-04 to 2005-06 until the final period of 2017-18 to 2019-2020.</p>
+<p>As with the boxplot chart, the x-axis at the bottom of the chart shows the time series for each pair of bars. The faceting has separated the barplots by geography code, which has been used to label each plot. It is possible to see that some geographical areas have greater differences in the number of discharges between the most and least deprived areas, with confidence intervals that do not overlap; for a few areas the differences are not so great.</p>
+<p>These data are summarised in a table below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>all_data_subset<span class="sc">$</span>geography_code <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(all_data_subset<span class="sc">$</span>geography_code)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># dplyr::select(all_data, "geography_code") %&gt;% </span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   unique() %&gt;% </span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   kableExtra::kbl() %&gt;% </span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   kable_material(c("striped", "hover")) %&gt;% </span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   pack_rows("Group 1", 2, 3, 10, 12, 16, 20) %&gt;% </span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   pack_rows("Group 2", 1, 4, 5, 6, 7, 8, 9, 11, 13, 14, 15, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
