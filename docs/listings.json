@@ -8,5 +8,11 @@
       "/posts/policy-storyboard/index.html",
       "/posts/psych-dashboard/index.html"
     ]
+  },
+  {
+    "listing": "/reflections.html",
+    "items": [
+      "/reflections/hort/index.html"
+    ]
   }
 ]
