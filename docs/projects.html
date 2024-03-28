@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -58,7 +58,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -91,6 +92,7 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
@@ -107,64 +109,42 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Growing Research</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html">
+    <a class="nav-link" href="./cv.html" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page">
+    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reflections.html">
+    <a class="nav-link" href="./reflections.html" rel="" target="">
  <span class="menu-text">The Coding Gardener</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/cjjdavies"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/cjjdavies" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bi-share" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-share" role="img">
-</i> 
- <span class="menu-text"></span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-bi-share">    
-        <li>
-    <a class="dropdown-item" href="https://twitter.com/"><i class="bi bi-twitter" role="img" aria-label="Twitter">
-</i> 
- <span class="dropdown-text">Twitter</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://www.facebook.com/"><i class="bi bi-facebook" role="img" aria-label="Facebook">
-</i> 
- <span class="dropdown-text">Facebook</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://www.linkedin.com/"><i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
-</i> 
- <span class="dropdown-text">LinkedIn</span></a>
-  </li>  
-    </ul>
-  </li>
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -175,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Linux">Linux <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SIMD">SIMD <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Scotland">Scotland <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Scottish courts">Scottish courts <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ubuntu">Ubuntu <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VS Code">VS Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="artificial intelligence">artificial intelligence <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aspen">aspen <span class="quarto-category-count">(1)</span></div><div class="category" data-category="biodiversity">biodiversity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="criminal justice">criminal justice <span class="quarto-category-count">(1)</span></div><div class="category" data-category="deprivation">deprivation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ethics">ethics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="inequality">inequality <span class="quarto-category-count">(1)</span></div><div class="category" data-category="interactive">interactive <span class="quarto-category-count">(1)</span></div><div class="category" data-category="lichens">lichens <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mental health">mental health <span class="quarto-category-count">(2)</span></div><div class="category" data-category="policy">policy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="woodlands">woodlands <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="COVID 19">COVID 19 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linux">Linux <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Mathematica">Mathematica <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SIMD">SIMD <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Scotland">Scotland <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Scottish courts">Scottish courts <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ubuntu">Ubuntu <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VS Code">VS Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="artificial intelligence">artificial intelligence <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aspen">aspen <span class="quarto-category-count">(1)</span></div><div class="category" data-category="biodiversity">biodiversity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="criminal justice">criminal justice <span class="quarto-category-count">(1)</span></div><div class="category" data-category="deprivation">deprivation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ethics">ethics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="inequality">inequality <span class="quarto-category-count">(1)</span></div><div class="category" data-category="interactive">interactive <span class="quarto-category-count">(1)</span></div><div class="category" data-category="lichens">lichens <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mental health">mental health <span class="quarto-category-count">(2)</span></div><div class="category" data-category="policy">policy <span class="quarto-category-count">(2)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="woodlands">woodlands <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -206,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="biodiversity,aspen,woodlands,Scotland,lichens,statistics" data-listing-file-modified-sort="1671808761000" data-listing-reading-time-sort="0.065">
+<div class="g-col-1" data-index="0" data-categories="biodiversity,aspen,woodlands,Scotland,lichens,statistics" data-listing-file-modified-sort="1671808761000" data-listing-reading-time-sort="1">
 <a href="./posts/aspen/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -248,7 +228,46 @@ Chantel Davies
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Python,VS Code,Ubuntu,Linux" data-listing-date-sort="1672531200000" data-listing-file-modified-sort="1672596455000" data-listing-reading-time-sort="3.375">
+<div class="g-col-1" data-index="1" data-categories="COVID 19,Mathematica,statistics,policy" data-listing-date-sort="1692399600000" data-listing-file-modified-sort="1692452466000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./posts/covid19_mathematica/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/covid19_mathematica/mathematica_timeline.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Government Measures Implemented During the COVID-19 Pandemic
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('COVID 19'); return false;">
+COVID 19
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Mathematica'); return false;">
+Mathematica
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('policy'); return false;">
+policy
+</div>
+</div>
+<div class="card-text listing-description">
+A computational essay written in Mathematica that explores a dataset of measures implemented by national governments during the early months of the COVID-19 pandemic
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Chantel Davies
+</div>
+<div class="listing-date">
+Aug 19, 2023
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Python,VS Code,Ubuntu,Linux" data-listing-date-sort="1672531200000" data-listing-file-modified-sort="1672596455000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <a href="./posts/vscode-basics/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -287,7 +306,7 @@ Jan 1, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="criminal justice,Scottish courts,interactive" data-listing-date-sort="1668470400000" data-listing-file-modified-sort="1671808347000" data-listing-reading-time-sort="0.07">
+<div class="g-col-1" data-index="3" data-categories="criminal justice,Scottish courts,interactive" data-listing-date-sort="1668470400000" data-listing-file-modified-sort="1671808347000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <a href="./posts/scts-mi/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -323,7 +342,7 @@ Nov 15, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="ethics,artificial intelligence,policy,mental health" data-listing-date-sort="1659567600000" data-listing-file-modified-sort="1673997278000" data-listing-reading-time-sort="0.07">
+<div class="g-col-1" data-index="4" data-categories="ethics,artificial intelligence,policy,mental health" data-listing-date-sort="1659567600000" data-listing-file-modified-sort="1673997278000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <a href="./posts/policy-storyboard/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -362,7 +381,7 @@ Aug 4, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="SIMD,mental health,inequality,deprivation" data-listing-date-sort="1639267200000" data-listing-file-modified-sort="1673991254000" data-listing-reading-time-sort="17.115">
+<div class="g-col-1" data-index="5" data-categories="SIMD,mental health,inequality,deprivation" data-listing-date-sort="1639267200000" data-listing-file-modified-sort="1673991254000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18">
 <a href="./posts/psych-dashboard/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -433,9 +452,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -500,6 +533,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -543,7 +662,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -558,7 +677,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Copyright 2023, Chantel Davies</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Copyright 2024, Chantel Davies</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

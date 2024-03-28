@@ -1,19 +1,21 @@
 [
   {
+    "listing": "/reflections.html",
+    "items": [
+      "/reflections/israel2/index.html",
+      "/reflections/israel/index.html",
+      "/reflections/hort/index.html"
+    ]
+  },
+  {
     "listing": "/projects.html",
     "items": [
       "/posts/aspen/index.html",
+      "/posts/covid19_mathematica/index.html",
       "/posts/vscode-basics/index.html",
       "/posts/scts-mi/index.html",
       "/posts/policy-storyboard/index.html",
       "/posts/psych-dashboard/index.html"
-    ]
-  },
-  {
-    "listing": "/reflections.html",
-    "items": [
-      "/reflections/israel/index.html",
-      "/reflections/hort/index.html"
     ]
   }
 ]
